@@ -130,7 +130,7 @@ void loop() {
             Serial.print(velocity);
             Serial.println(" cm/s");
             
-            float s = 18;
+            float s = 15;
             float a = 9.81 * sin(6.87 * PI / 180);
             float v = velocity;
             float A = 0.5 * a;
@@ -168,7 +168,6 @@ void loop() {
             myservo.write(90);
             Serial.println("🔻 Catch you!");
             lcd.setCursor(0, 1);
-            lcd.print("🔻 Catch you!   ");
             servocheck = false;
         }
     } else if (mode == "Manual") {
@@ -176,7 +175,6 @@ void loop() {
             myservo.write(90);
             Serial.println("🔻 Manual Trigger!");
             lcd.setCursor(0, 1);
-            lcd.print("🔻 Manual Trigger!");
             delay(300);
         }
     }
@@ -184,7 +182,6 @@ void loop() {
     if (resetFlag) {
         Serial.println("🔄 Reset!");
         lcd.setCursor(0, 1);
-        lcd.print("🔄 Reset!       ");
         myservo.write(0);
         finished = false;
         servocheck = false;
